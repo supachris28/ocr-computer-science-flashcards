@@ -70,7 +70,31 @@ h1 span { color: #76a579; }
 .card-prompt { margin: 0 0 12px; color: #829088; font-size: 9px; font-weight: 700; letter-spacing: .16em; }
 .card-content h2 { max-width: 550px; margin: 0; font-size: clamp(22px, 3.3vw, 29px); line-height: 1.32; letter-spacing: -.04em; }
 .answer { margin-top: 21px; padding-top: 17px; border-top: 1px solid var(--line); animation: appear .2s ease-out; }
-.answer p:last-child { max-width: 560px; margin: 0; color: #56635d; font-size: 14px; line-height: 1.7; }
+.answer > #answer-text { max-width: 560px; margin: 0; color: #56635d; font-size: 14px; line-height: 1.7; }
+/* Exam marks and mark scheme */
+.card-meta { display: inline-flex; align-items: center; gap: 10px; }
+.marks-pill { color: var(--green-deep); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.question-code, .answer #answer-text.is-code { margin: 14px 0 0; padding: 12px 14px; overflow-x: auto; border-radius: 9px; background: #f1f2ec; color: var(--ink); font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 13px; line-height: 1.55; white-space: pre; }
+.answer #answer-text.is-code { margin: 0; }
+.answer p#answer-text { max-width: 560px; margin: 0; color: #56635d; font-size: 14px; line-height: 1.7; }
+.mark-scheme { margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.mark-scheme-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.mark-scheme-head .card-prompt { margin-bottom: 6px; }
+.self-score { margin: 0; padding: 4px 9px; border-radius: 99px; background: #edf3e9; color: var(--green-deep); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.answer .mark-scheme-hint { margin: 0 0 10px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.mark-points, .mark-reject ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.mark-points li { color: #3f4c47; font-size: 13px; line-height: 1.5; }
+.mark-points li:not(:has(label)) { padding-left: 16px; position: relative; }
+.mark-points li:not(:has(label))::before { content: "•"; position: absolute; left: 3px; color: #82ac83; }
+.mark-points label { display: flex; align-items: flex-start; gap: 9px; padding: 6px 8px; border-radius: 7px; cursor: pointer; }
+.mark-points label:hover { background: #f4f6f0; }
+.mark-points input { flex: 0 0 auto; width: 15px; height: 15px; margin: 2px 0 0; accent-color: #43806d; cursor: pointer; }
+.mark-reject { margin-top: 14px; padding: 10px 12px; border-radius: 9px; background: #f8efea; }
+.mark-reject .card-prompt { margin-bottom: 6px; color: #9a5b43; }
+.mark-reject li { padding-left: 16px; position: relative; color: #6c4536; font-size: 12px; line-height: 1.5; }
+.mark-reject li::before { content: "✕"; position: absolute; left: 0; color: #b56f55; font-size: 10px; }
+.answer p.exam-tip { margin: 14px 0 0; color: #56635d; font-size: 12px; line-height: 1.55; }
+.exam-tip strong { margin-right: 6px; color: var(--green-deep); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
 @keyframes appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 .card-footer { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding-top: 15px; }
 .think-hint { color: #87948d; font-size: 11px; }
@@ -99,7 +123,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
   .selection-summary { font-size: 10px; }
   .flashcard { min-height: 340px; padding: 19px 18px 17px; }
   .card-content { padding: 25px 2px; }
-  .answer p:last-child { font-size: 14px; }
+  .answer > #answer-text { font-size: 14px; }
   .card-footer { align-items: flex-start; flex-direction: column; padding-top: 14px; }
   .reveal-button, .next-button { width: 100%; }
   .footer { gap: 12px; align-items: flex-start; flex-direction: column; }
