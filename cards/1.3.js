@@ -1,0 +1,23 @@
+window.J277CardSections = window.J277CardSections || {};
+window.J277CardSections['1.3'] = [
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is a LAN?', answer: 'A Local Area Network connects devices over a relatively small geographical area, such as a home, school, or office.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is a WAN?', answer: 'A Wide Area Network connects devices over a large geographical area. The Internet is an example of a WAN.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'How can the number of connected devices affect network performance?', answer: 'More devices can create more traffic and contention for bandwidth, which may reduce the available bandwidth and increase delays.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is the difference between a client-server network and a peer-to-peer network?', answer: 'In a client-server network, dedicated servers provide services to clients. In a peer-to-peer network, devices can act as both clients and servers and share resources directly.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What does a router do?', answer: 'A router forwards data packets between different networks, using IP addresses to choose where packets should go.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What does a switch do on a LAN?', answer: 'A switch connects devices on a LAN and forwards data to the intended device, using MAC addresses.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is the role of a wireless access point?', answer: 'It allows wireless devices to connect to a wired network, usually using Wi-Fi.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is a NIC?', answer: 'A Network Interface Controller or card provides the hardware interface that allows a device to connect to a network.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is DNS used for?', answer: 'The Domain Name System converts a human-readable URL or domain name into an IP address.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is the relationship between a web server and a web client?', answer: 'A web client requests web pages or other resources. A web server receives the request and provides the requested resource.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is cloud computing?', answer: 'Cloud computing is the remote provision of services such as storage, software, or processing over a network.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'Give one advantage and one disadvantage of cloud computing.', answer: 'An advantage is that files or services can be accessed from different devices. A disadvantage is that access depends on a network connection and may raise privacy or security concerns.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is a star topology?', answer: 'Every device has a separate connection to a central switch or hub. A failed device link usually affects only that device, but the central device is a single point of failure.' },
+  { subtopic: '1.3.1', topic: 'NETWORKS', question: 'What is a mesh topology?', answer: 'Devices have multiple connections to other devices. It can be resilient because data may take another route, but it needs more cabling and is more expensive to install.' },
+  { subtopic: '1.3.2', topic: 'NETWORKS', question: 'What is one advantage of a wired connection over a wireless connection?', answer: 'A wired connection is generally faster, more reliable, and less affected by interference. It is less flexible because a cable is required.' },
+  { subtopic: '1.3.2', topic: 'NETWORKS', question: 'What is the purpose of an IP address?', answer: 'An IP address identifies a device on a network and allows data to be routed to it.' },
+  { subtopic: '1.3.2', topic: 'NETWORKS', question: 'What is a MAC address?', answer: 'A MAC address is a hardware address assigned to a network interface. It identifies a device on a local network.' },
+  { subtopic: '1.3.2', topic: 'NETWORKS', question: 'What is a network protocol?', answer: 'A protocol is a set of rules for transferring data between devices, including how data is formatted and handled.' },
+  { subtopic: '1.3.2', topic: 'NETWORKS', question: 'What is HTTPS used for?', answer: 'HTTPS transfers web pages securely. It uses encryption to help protect data sent between a web client and server.' },
+  { subtopic: '1.3.2', topic: 'NETWORKS', question: 'Why are layers used in network protocols?', answer: 'Layers divide communication into manageable tasks. Each layer has a specific responsibility, which makes protocols easier to design, update, and troubleshoot.' }
+];

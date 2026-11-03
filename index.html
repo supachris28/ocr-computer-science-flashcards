@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ef">
+    <meta name="description" content="Practise OCR GCSE Computer Science J277 with random revision flashcards.">
+    <title>J277 Revision Cards</title>
+    <link rel="stylesheet" href="styles.css?v=20260926-01">
+    <script src="app.js?v=20260926-01" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="J277 Revision Cards home">
+          <span class="brand-mark" aria-hidden="true">J</span>
+          <span>revision room<span class="brand-period">.</span></span>
+        </a>
+        <span class="course-label"><span class="course-dot" aria-hidden="true"></span> OCR GCSE · J277</span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">A little practice goes a long way</p>
+          <h1 id="page-title">Make it <span>stick.</span></h1>
+          <p class="intro-copy">Choose your topics, then practise one card at a time.</p>
+        </section>
+
+        <section class="syllabus-picker" aria-labelledby="syllabus-title">
+          <div class="picker-heading">
+            <button id="toggle-syllabus-index" class="picker-toggle" type="button" aria-expanded="true" aria-controls="syllabus-picker-content">
+              <span>
+                <span class="eyebrow">Build your deck</span>
+                <span id="syllabus-title" class="picker-title">Syllabus index</span>
+              </span>
+              <span class="picker-toggle-icon" aria-hidden="true">⌄</span>
+            </button>
+            <p class="selection-summary" id="selection-summary" aria-live="polite">11 of 11 sections · 163 cards</p>
+          </div>
+          <div id="syllabus-picker-content">
+            <div class="picker-controls">
+              <p>Choose which sections to include in random practice.</p>
+              <div class="picker-actions">
+                <button id="select-all" class="text-button" type="button">Select all</button>
+                <span aria-hidden="true">·</span>
+                <button id="select-none" class="text-button" type="button">Clear all</button>
+              </div>
+            </div>
+            <div class="syllabus-columns">
+              <fieldset>
+                <legend><span class="paper-number">01</span> Computer systems</legend>
+                <div class="section-list" id="paper-one-sections"></div>
+              </fieldset>
+              <fieldset>
+                <legend><span class="paper-number">02</span> Computational thinking, algorithms and programming</legend>
+                <div class="section-list" id="paper-two-sections"></div>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+
+        <section class="practice" aria-label="Flashcard practice">
+          <div class="session-row">
+            <div class="session-label"><span class="session-icon" aria-hidden="true">✳</span> RANDOM PRACTICE</div>
+            <div class="progress-copy" id="progress-copy" aria-live="polite">CARD 1 OF 15</div>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+          <article class="flashcard" id="flashcard" aria-labelledby="card-question">
+            <div class="card-topline">
+              <span id="card-topic" class="topic-pill">SYSTEMS ARCHITECTURE</span>
+              <span class="card-number" id="card-number">01</span>
+            </div>
+            <div class="card-content">
+              <p class="card-prompt">YOUR QUESTION</p>
+              <h2 id="card-question">Loading a card…</h2>
+              <div class="answer" id="card-answer" hidden>
+                <p class="card-prompt">THE ANSWER</p>
+                <p id="answer-text"></p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span class="think-hint" id="think-hint"><span aria-hidden="true">↳</span> Take a moment to recall</span>
+              <button class="reveal-button" id="reveal-button" type="button">Show answer <span aria-hidden="true">↗</span></button>
+              <button class="next-button" id="next-button" type="button" hidden>Next card <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+          <div class="empty-state" id="empty-state" role="status" hidden>
+            <span class="empty-icon" aria-hidden="true">✳</span>
+            <h2>No sections selected</h2>
+            <p>Select at least one syllabus section above to build a practice deck.</p>
+          </div>
+          <p class="session-note" id="session-note"><span aria-hidden="true">✦</span> Cards are shuffled with no repeats until the selected deck is complete.</p>
+        </section>
+      </main>
+
+      <footer class="footer"><span>Built for curious minds.</span><span>OCR GCSE Computer Science · J277</span></footer>
+    </div>
+  </body>
+</html>

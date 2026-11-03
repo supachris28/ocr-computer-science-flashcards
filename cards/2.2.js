@@ -1,0 +1,23 @@
+window.J277CardSections = window.J277CardSections || {};
+window.J277CardSections['2.2'] = [
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is a variable?', answer: 'A named storage location whose value can change while a program runs.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is a constant?', answer: 'A named value that is set once and should not change while a program runs.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What does assignment do?', answer: 'It stores a value or the result of an expression in a variable.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What are sequence, selection and iteration?', answer: 'Sequence runs statements in order, selection chooses between paths, and iteration repeats a block.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is the difference between count-controlled and condition-controlled iteration?', answer: 'Count-controlled loops repeat a known number of times; condition-controlled loops repeat while or until a condition changes.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What are comparison operators used for?', answer: 'They compare values, for example equal to, not equal to, less than, greater than, less than or equal to, and greater than or equal to.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What do MOD, DIV and exponentiation do?', answer: 'MOD returns a remainder, DIV returns an integer quotient, and exponentiation raises a number to a power.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What are integer, real, Boolean, character and string data types?', answer: 'Integer stores whole numbers, real stores numbers with a fractional part, Boolean stores true or false, character stores one symbol, and string stores text.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is casting?', answer: 'Explicitly converting a value from one data type to another, such as converting text containing digits to an integer.' },
+  { subtopic: '2.2.1', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What are concatenation and slicing?', answer: 'Concatenation joins strings; slicing extracts part of a string using positions or indexes.' },
+  { subtopic: '2.2.2', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What are the basic file operations in a program?', answer: 'Open the file, read from or write to it, and close it when finished.' },
+  { subtopic: '2.2.2', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is a record?', answer: 'A data structure that stores related fields, which may have different data types, for one item.' },
+  { subtopic: '2.2.2', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What do SELECT, FROM and WHERE do in SQL?', answer: 'SELECT chooses fields, FROM identifies the table, and WHERE filters rows using a condition.' },
+  { subtopic: '2.2.2', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is the difference between a one-dimensional and a two-dimensional array?', answer: 'A one-dimensional array uses one index; a two-dimensional array uses two indexes, such as row and column.' },
+  { subtopic: '2.2.3', topic: 'PROGRAMMING FUNDAMENTALS', question: 'Why use a function or procedure?', answer: 'To group a useful task into a reusable subprogram, reducing repetition and making a program easier to understand and maintain.' },
+  { subtopic: '2.2.3', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is the difference between a function and a procedure?', answer: 'A function returns a value; a procedure performs an action and does not have to return a value.' },
+  { subtopic: '2.2.3', topic: 'PROGRAMMING FUNDAMENTALS', question: 'What is variable scope?', answer: 'The part of a program where a variable can be accessed. Local variables belong to a subprogram; global variables can be accessed more widely.' },
+  { subtopic: '2.2.3', topic: 'PROGRAMMING FUNDAMENTALS', question: 'How can arrays be passed to or returned from subprograms?', answer: 'An array can be supplied as a parameter, and a subprogram can return an array where the language supports it.' },
+  { subtopic: '2.2.3', topic: 'PROGRAMMING FUNDAMENTALS', question: 'How can a program generate a random number?', answer: 'Use a random-number function with a suitable range, for example to choose an index or simulate an event.' },
+  { subtopic: '2.2.3', topic: 'PROGRAMMING FUNDAMENTALS', question: 'Why are local variables usually preferred where possible?', answer: 'They limit unintended changes from other parts of the program and make subprograms easier to understand and test.' }
+];
