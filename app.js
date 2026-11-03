@@ -1,17 +1,17 @@
-const ASSET_VERSION = '20261103-01';
+const ASSET_VERSION = '20261103-02';
 
 const sections = [
-  { id: '1.1', paper: 1, title: 'Systems architecture', cardCount: 21 },
-  { id: '1.2', paper: 1, title: 'Memory and storage', cardCount: 53 },
-  { id: '1.3', paper: 1, title: 'Computer networks, connections and protocols', cardCount: 36 },
-  { id: '1.4', paper: 1, title: 'Network security', cardCount: 20 },
-  { id: '1.5', paper: 1, title: 'Systems software', cardCount: 14 },
-  { id: '1.6', paper: 1, title: 'Ethical, legal, cultural and environmental impacts of digital technology', cardCount: 21 },
-  { id: '2.1', paper: 2, title: 'Algorithms', cardCount: 27 },
-  { id: '2.2', paper: 2, title: 'Programming fundamentals', cardCount: 32 },
-  { id: '2.3', paper: 2, title: 'Producing robust programs', cardCount: 16 },
-  { id: '2.4', paper: 2, title: 'Boolean logic', cardCount: 14 },
-  { id: '2.5', paper: 2, title: 'Programming languages and Integrated Development Environments', cardCount: 13 }
+  { id: '1.1', paper: 1, title: 'Systems architecture', cardCount: 29 },
+  { id: '1.2', paper: 1, title: 'Memory and storage', cardCount: 63 },
+  { id: '1.3', paper: 1, title: 'Computer networks, connections and protocols', cardCount: 44 },
+  { id: '1.4', paper: 1, title: 'Network security', cardCount: 28 },
+  { id: '1.5', paper: 1, title: 'Systems software', cardCount: 21 },
+  { id: '1.6', paper: 1, title: 'Ethical, legal, cultural and environmental impacts of digital technology', cardCount: 29 },
+  { id: '2.1', paper: 2, title: 'Algorithms', cardCount: 35 },
+  { id: '2.2', paper: 2, title: 'Programming fundamentals', cardCount: 42 },
+  { id: '2.3', paper: 2, title: 'Producing robust programs', cardCount: 23 },
+  { id: '2.4', paper: 2, title: 'Boolean logic', cardCount: 20 },
+  { id: '2.5', paper: 2, title: 'Programming languages and Integrated Development Environments', cardCount: 19 }
 ];
 
 const sectionSummary = document.querySelector('#selection-summary');
