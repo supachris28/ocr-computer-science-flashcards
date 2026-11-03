@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#f5f4ef">
     <meta name="description" content="Practise OCR GCSE Computer Science J277 with random revision flashcards.">
     <title>J277 Revision Cards</title>
-    <link rel="stylesheet" href="styles.css?v=20260926-01">
-    <script src="app.js?v=20260926-01" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261103-01">
+    <script src="app.js?v=20261103-01" defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -35,7 +35,7 @@
               </span>
               <span class="picker-toggle-icon" aria-hidden="true">⌄</span>
             </button>
-            <p class="selection-summary" id="selection-summary" aria-live="polite">11 of 11 sections · 163 cards</p>
+            <p class="selection-summary" id="selection-summary" aria-live="polite">11 of 11 sections · 267 cards</p>
           </div>
           <div id="syllabus-picker-content">
             <div class="picker-controls">
@@ -68,14 +68,31 @@
           <article class="flashcard" id="flashcard" aria-labelledby="card-question">
             <div class="card-topline">
               <span id="card-topic" class="topic-pill">SYSTEMS ARCHITECTURE</span>
-              <span class="card-number" id="card-number">01</span>
+              <span class="card-meta">
+                <span class="marks-pill" id="card-marks" hidden></span>
+                <span class="card-number" id="card-number">01</span>
+              </span>
             </div>
             <div class="card-content">
               <p class="card-prompt">YOUR QUESTION</p>
               <h2 id="card-question">Loading a card…</h2>
+              <pre class="question-code" id="card-question-code" hidden></pre>
               <div class="answer" id="card-answer" hidden>
-                <p class="card-prompt">THE ANSWER</p>
+                <p class="card-prompt">MODEL ANSWER</p>
                 <p id="answer-text"></p>
+                <section class="mark-scheme" id="mark-scheme" aria-labelledby="mark-scheme-title" hidden>
+                  <div class="mark-scheme-head">
+                    <p class="card-prompt" id="mark-scheme-title">MARK SCHEME</p>
+                    <p class="self-score" id="self-score" aria-live="polite" hidden></p>
+                  </div>
+                  <p class="mark-scheme-hint" id="mark-scheme-hint"></p>
+                  <ul class="mark-points" id="mark-scheme-list"></ul>
+                  <div class="mark-reject" id="mark-reject" hidden>
+                    <p class="card-prompt">DO NOT ACCEPT</p>
+                    <ul id="mark-reject-list"></ul>
+                  </div>
+                  <p class="exam-tip" id="exam-tip" hidden><strong>Examiner tip</strong> <span id="exam-tip-text"></span></p>
+                </section>
               </div>
             </div>
             <div class="card-footer">

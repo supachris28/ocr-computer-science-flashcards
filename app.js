@@ -1,17 +1,17 @@
-const ASSET_VERSION = '20260926-01';
+const ASSET_VERSION = '20261103-01';
 
 const sections = [
-  { id: '1.1', paper: 1, title: 'Systems architecture', cardCount: 14 },
-  { id: '1.2', paper: 1, title: 'Memory and storage', cardCount: 20 },
-  { id: '1.3', paper: 1, title: 'Computer networks, connections and protocols', cardCount: 20 },
-  { id: '1.4', paper: 1, title: 'Network security', cardCount: 14 },
-  { id: '1.5', paper: 1, title: 'Systems software', cardCount: 12 },
-  { id: '1.6', paper: 1, title: 'Ethical, legal, cultural and environmental impacts of digital technology', cardCount: 15 },
-  { id: '2.1', paper: 2, title: 'Algorithms', cardCount: 18 },
-  { id: '2.2', paper: 2, title: 'Programming fundamentals', cardCount: 20 },
-  { id: '2.3', paper: 2, title: 'Producing robust programs', cardCount: 12 },
-  { id: '2.4', paper: 2, title: 'Boolean logic', cardCount: 8 },
-  { id: '2.5', paper: 2, title: 'Programming languages and Integrated Development Environments', cardCount: 10 }
+  { id: '1.1', paper: 1, title: 'Systems architecture', cardCount: 21 },
+  { id: '1.2', paper: 1, title: 'Memory and storage', cardCount: 53 },
+  { id: '1.3', paper: 1, title: 'Computer networks, connections and protocols', cardCount: 36 },
+  { id: '1.4', paper: 1, title: 'Network security', cardCount: 20 },
+  { id: '1.5', paper: 1, title: 'Systems software', cardCount: 14 },
+  { id: '1.6', paper: 1, title: 'Ethical, legal, cultural and environmental impacts of digital technology', cardCount: 21 },
+  { id: '2.1', paper: 2, title: 'Algorithms', cardCount: 27 },
+  { id: '2.2', paper: 2, title: 'Programming fundamentals', cardCount: 32 },
+  { id: '2.3', paper: 2, title: 'Producing robust programs', cardCount: 16 },
+  { id: '2.4', paper: 2, title: 'Boolean logic', cardCount: 14 },
+  { id: '2.5', paper: 2, title: 'Programming languages and Integrated Development Environments', cardCount: 13 }
 ];
 
 const sectionSummary = document.querySelector('#selection-summary');
@@ -24,6 +24,16 @@ const emptyState = document.querySelector('#empty-state');
 const question = document.querySelector('#card-question');
 const answer = document.querySelector('#answer-text');
 const answerPanel = document.querySelector('#card-answer');
+const questionCode = document.querySelector('#card-question-code');
+const marksPill = document.querySelector('#card-marks');
+const markSchemePanel = document.querySelector('#mark-scheme');
+const markSchemeList = document.querySelector('#mark-scheme-list');
+const markSchemeHint = document.querySelector('#mark-scheme-hint');
+const rejectPanel = document.querySelector('#mark-reject');
+const rejectList = document.querySelector('#mark-reject-list');
+const examTip = document.querySelector('#exam-tip');
+const examTipText = document.querySelector('#exam-tip-text');
+const selfScore = document.querySelector('#self-score');
 const topic = document.querySelector('#card-topic');
 const number = document.querySelector('#card-number');
 const progressCopy = document.querySelector('#progress-copy');
@@ -163,8 +173,8 @@ function showNextCard() {
   flashcard.hidden = false;
   emptyState.hidden = true;
   sessionNote.hidden = false;
-  question.textContent = currentCard.question;
-  answer.textContent = currentCard.answer;
+  renderQuestion(currentCard);
+  renderAnswer(currentCard);
   topic.textContent = currentCard.topic;
   number.textContent = currentCard.section;
   answerPanel.hidden = true;
@@ -172,6 +182,74 @@ function showNextCard() {
   nextButton.hidden = true;
   thinkHint.hidden = false;
   updateProgress();
+}
+
+function marksLabel(marks) {
+  return `${marks} ${marks === 1 ? 'mark' : 'marks'}`;
+}
+
+function isLevelled(card) {
+  return (card.markScheme || []).some((point) => /^Level \d/.test(point));
+}
+
+function renderQuestion(card) {
+  const [prompt, ...code] = card.question.split('\n\n');
+  question.textContent = prompt;
+  questionCode.textContent = code.join('\n\n');
+  questionCode.hidden = code.length === 0;
+  marksPill.hidden = !card.marks;
+  if (card.marks) marksPill.textContent = `[${marksLabel(card.marks)}]`;
+}
+
+function fillList(list, items, checkable) {
+  list.replaceChildren(...items.map((item, index) => {
+    const li = document.createElement('li');
+    if (!checkable) {
+      li.textContent = item;
+      return li;
+    }
+    const label = document.createElement('label');
+    const box = document.createElement('input');
+    box.type = 'checkbox';
+    box.id = `mark-point-${index}`;
+    box.dataset.markPoint = String(index);
+    const text = document.createElement('span');
+    text.textContent = item;
+    label.append(box, text);
+    li.append(label);
+    return li;
+  }));
+}
+
+function updateSelfScore() {
+  if (!currentCard?.marks || isLevelled(currentCard)) {
+    selfScore.hidden = true;
+    return;
+  }
+  const ticked = markSchemeList.querySelectorAll('[data-mark-point]:checked').length;
+  const score = Math.min(ticked, currentCard.marks);
+  selfScore.hidden = false;
+  selfScore.textContent = ticked > currentCard.marks
+    ? `${score} / ${currentCard.marks} · capped at the maximum for this question`
+    : `${score} / ${currentCard.marks}`;
+}
+
+function renderAnswer(card) {
+  answer.textContent = card.answer;
+  answer.classList.toggle('is-code', card.answer.includes('\n'));
+  const scheme = card.markScheme || [];
+  markSchemePanel.hidden = scheme.length === 0;
+  const levelled = isLevelled(card);
+  fillList(markSchemeList, scheme, !levelled);
+  markSchemeHint.textContent = levelled
+    ? 'Marked by level: read the descriptors and decide which best fits your answer.'
+    : `Tick each point you made. Each point is worth 1 mark, up to ${marksLabel(card.marks)}.`;
+  const reject = card.reject || [];
+  rejectPanel.hidden = reject.length === 0;
+  fillList(rejectList, reject, false);
+  examTip.hidden = !card.examTip;
+  examTipText.textContent = card.examTip || '';
+  updateSelfScore();
 }
 
 function updateSections() {
@@ -212,6 +290,7 @@ revealButton.addEventListener('click', () => {
 });
 
 nextButton.addEventListener('click', showNextCard);
+markSchemeList.addEventListener('change', updateSelfScore);
 document.addEventListener('keydown', (event) => {
   if (event.code === 'Space' && !event.repeat && !event.target.matches('button, a, input')) {
     event.preventDefault();
